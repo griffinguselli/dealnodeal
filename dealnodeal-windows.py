@@ -9,7 +9,7 @@ ovalues = values.copy()
 random.shuffle(values)
 board = dict(zip(case, values))
 
-def printcases(maincase):
+def printcases():
     subprocess.run("cls")
     for i in case:
         print(f"[{i}]", end=" ")
@@ -33,7 +33,7 @@ def removecases(ran):
             sys.exit()
         removedcase.append(removed)
         ovalues.remove(board[removed])
-        printcases("1")
+        printcases()
 
 def convert(x):
     prize = board[x]
@@ -57,11 +57,11 @@ def makeoffer():
     print("")
     accept(o)
 
-printcases("1")
+printcases()
 maincase = input("\n What Case Do You Choose?\n")
 case.remove(maincase)
 removedcase.append(maincase)
-printcases(maincase)
+printcases()
 
 removecases(4)
 makeoffer()
